@@ -127,39 +127,13 @@
                     <div class="team-grid">
                         <div class="team-member">
                             <div class="team-image">
-                                <img src="images/team1.jpg" alt="Mehdi">
-                                <div class="overlay">
-                                    <div class="social-links">
-                                        <a href="https://linkedin.com/in/mehdi" target="_blank" aria-label="LinkedIn-profiel van Mehdi">
-                                            <i class="fab fa-linkedin-in"></i>
-                                        </a>
-                                        <a href="https://twitter.com/mehdi" target="_blank" aria-label="Twitter-profiel van Mehdi">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                        <a href="mailto:mehdi@example.com" aria-label="Stuur een e-mail naar Mehdi">
-                                            <i class="fas fa-envelope"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                                <a href="https://discordapp.com/users/754048345689030709" target="_blank"><img src="images/pfp_mehdi.gif" alt="Mehdi"></a>
                             </div>
                             <h4>Mehdi</h4>
                         </div>
                         <div class="team-member">
                             <div class="team-image">
-                                <img src="images/team4.jpg" alt="Karlis">
-                                <div class="overlay">
-                                    <div class="social-links">
-                                        <a href="https://linkedin.com/in/karlis" target="_blank" aria-label="LinkedIn-profiel van Karlis">
-                                            <i class="fab fa-linkedin-in"></i>
-                                        </a>
-                                        <a href="https://twitter.com/karlis" target="_blank" aria-label="Twitter-profiel van Karlis">
-                                            <i class="fab fa-twitter"></i>
-                                        </a>
-                                        <a href="mailto:karlis@example.com" aria-label="Stuur een e-mail naar Karlis">
-                                            <i class="fas fa-envelope"></i>
-                                        </a>
-                                    </div>
-                                </div>
+                                <a href="https://discordapp.com/users/633713761966096404" target="_blank"><img src="images/pfp_karl.png" alt="Karlis"></a>
                             </div>
                             <h4>Karlis</h4>
                         </div>
@@ -214,6 +188,46 @@
                 document.querySelector(".assignment-banner").classList.remove("show");
             });
         }
+async function fetchSatirischNieuws() {
+    const apiUrl = "https://api.webz.io/newsApiLite";
+    const apiToken = "56e797ec-eeb5-4824-8c02-0683c6af3f52";
+    const query = "Satire";
+
+    try {
+        const response = await fetch(`${apiUrl}?token=${apiToken}&q=${query}`);
+
+        if (!response.ok) {
+            throw new Error("Fout bij het ophalen van nieuws.");
+        }
+
+        const data = await response.json();
+        const newsContainer = document.querySelector(".news-grid");
+
+        newsContainer.innerHTML = "";
+
+        data.posts.forEach((article) => {
+            const newsItem = document.createElement("a");
+            newsItem.classList.add("news-item");
+            newsItem.href = article.thread.url || "#";
+            newsItem.target = "_blank";
+
+            newsItem.innerHTML = `
+                <img src="${article.thread.main_image || 'images/placeholder.jpg'}" alt="${article.title}">
+                <h3>${article.title}</h3>
+                <p>${article.text || "Geen beschrijving beschikbaar."}</p>
+            `;
+            newsContainer.appendChild(newsItem);
+        });
+    } catch (error) {
+        console.error("Error:", error);
+        alert("Het ophalen van nieuws is mislukt. Probeer het later opnieuw.");
+    }
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    fetchSatirischNieuws();
+});
+
     </script>
 </body>
 </html>
