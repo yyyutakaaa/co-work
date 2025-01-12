@@ -316,7 +316,9 @@ section p {
   gap: 15px;
   flex-wrap: wrap;
 }
-
+.trending p{
+  padding-top: 2rem;
+}
 .trending .trending-list li a {
   background-color: var(--primary-color);
   color: var(--light-color);
