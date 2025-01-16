@@ -82,3 +82,53 @@
             });
         });
     });
+// Bestaande scripts...
+
+document.addEventListener("DOMContentLoaded", () => {
+    fetchSatirischNieuws();
+
+    // Hamburger-menu functionaliteit
+    const hamburger = document.querySelector(".hamburger");
+    const nav = document.querySelector("nav");
+    const overlay = document.querySelector(".overlay");
+
+    hamburger.addEventListener("click", () => {
+        nav.classList.toggle("active");
+        overlay.classList.toggle("active");
+    });
+
+    // Sluit het menu wanneer op de overlay wordt geklikt
+    overlay.addEventListener("click", () => {
+        nav.classList.remove("active");
+        overlay.classList.remove("active");
+    });
+
+    // Trending links functionaliteit
+    const trendingLinks = document.querySelectorAll(".trending-list a");
+
+    trendingLinks.forEach(link => {
+        link.addEventListener("click", async (event) => {
+            event.preventDefault();
+            const query = link.getAttribute("data-query");
+            const response = await fetch(`https://api.webz.io/newsApiLite?token=56e797ec-eeb5-4824-8c02-0683c6af3f52&q=${query}`);
+            const data = await response.json();
+            const newsContainer = document.querySelector(".news-grid");
+            newsContainer.innerHTML = "";
+
+            data.posts.forEach(article => {
+                const newsItem = document.createElement("a");
+                newsItem.classList.add("news-item");
+                newsItem.href = article.thread.url || "#";
+                newsItem.target = "_blank";
+
+                const imageUrl = article.thread?.main_image?.trim() || 'images/placeholder.jpg';
+                newsItem.innerHTML = `
+                    <img src="${imageUrl}" alt="${article.title}">
+                    <h3>${article.title || "Geen titel beschikbaar"}</h3>
+                    <p>${article.text || "Geen beschrijving beschikbaar."}</p>
+                `;
+                newsContainer.appendChild(newsItem);
+            });
+        });
+    });
+});
