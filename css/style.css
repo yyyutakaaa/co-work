@@ -740,7 +740,8 @@ footer .social-media a:hover {
   }
 
   .trending .trending-list {
-    flex-direction: column;    
+    flex-direction: column;
+    gap: 20px;
   }
 
   .assignment-banner {
