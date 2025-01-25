@@ -1,134 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ClickHub</title>
     <script src="js/Script.js" defer></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
     <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W5ML2HY726"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-W5ML2HY726"
+    ></script>
     <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag('config', 'G-W5ML2HY726');
+      gtag("config", "G-W5ML2HY726");
     </script>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="header-container">
-            <div class="logo">
-                <h1>Click<span class="orange-background">Hub</span></h1>
-                <h2>Satirical Analysis On Every Click</h2>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#latest-news"><i class="fas fa-newspaper"></i> Latest News</a></li>
-                    <li><a href="#trending"><i class="fas fa-trending-up"></i> Trending</a></li>
-                    <li><a href="#about"><i class="fas fa-info-circle"></i> About Us</a></li>
-                    <li><a href="#newsletter"><i class="fas fa-envelope"></i> Contact</a></li>
-                    <li><a href="own-news/"> Own News</a></li>
-                </ul>
-            </nav>
+      <div class="header-container">
+        <div class="logo">
+          <h1>Click<span class="orange-background">Hub</span></h1>
+          <h2>Satirical Analysis On Every Click</h2>
         </div>
+        <nav>
+          <ul class="nav-links">
+            <li>
+              <a href="#home"><i class="fas fa-home"></i> Home</a>
+            </li>
+            <li>
+              <a href="#latest-news"
+                ><i class="fas fa-newspaper"></i> Latest News</a
+              >
+            </li>
+            <li>
+              <a href="#trending"
+                ><i class="fas fa-trending-up"></i> Trending</a
+              >
+            </li>
+            <li>
+              <a href="#about"><i class="fas fa-info-circle"></i> About Us</a>
+            </li>
+            <li>
+              <a href="#newsletter"><i class="fas fa-envelope"></i> Contact</a>
+            </li>
+            <li><a href="own-news/"> Own News</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
     <main>
-        <section class="assignment-banner">
-            <p>This website was created as part of a school project. Cookies are required for the site to function properly.</p>
-            <button class="close-banner">Close</button>
-        </section>
-        <section class="home" id="home">
-            <div class="home-content">
-                <h1>ClickHub</h1>
-                <h3><span class="auto-type">Your Source For Satirical News</span></h3>
-                <p>Stay updated with the latest developments, sprinkled with humor.</p>
-                <div class="btn-box">
-                    <a href="#latest-news" style="color: #000000;">Read More</a>
-                    <a href="#newsletter">Sign Up</a>
+      <section class="assignment-banner">
+        <p>
+          This website was created as part of a school project. Cookies are
+          required for the site to function properly.
+        </p>
+        <button class="close-banner">Close</button>
+      </section>
+      <section class="home" id="home">
+        <div class="home-content">
+          <h1>ClickHub</h1>
+          <h3><span class="auto-type">Your Source For Satirical News</span></h3>
+          <p>
+            Stay updated with the latest developments, sprinkled with humor.
+          </p>
+          <div class="btn-box">
+            <a href="#latest-news" style="color: #000000">Read More</a>
+            <a href="#newsletter">Sign Up</a>
+          </div>
+        </div>
+      </section>
+      <section class="trending" id="trending">
+        <div class="container">
+          <h2>Real News <span style="font-size: 16px">(not satire)</span></h2>
+          <ul class="trending-list">
+            <li><a href="#" data-query="Bitcoin">Bitcoin</a></li>
+            <li><a href="#" data-query="Sport">Sport</a></li>
+            <li><a href="#" data-query="Economy">Economy</a></li>
+            <li><a href="#" data-query="Politic">Politic</a></li>
+          </ul>
+        </div>
+        <p>Reload to get satire news again</p>
+      </section>
+
+      <section class="latest-news" id="latest-news">
+        <div class="container">
+          <h2>Latest News</h2>
+          <div class="news-grid"></div>
+        </div>
+      </section>
+      <section class="about" id="about">
+        <div class="container">
+          <h2>About Us</h2>
+          <div class="about-wrapper">
+            <div class="about-text">
+              <p>
+                Welcome to ClickHub! We are students from the Electronics-ICT
+                program at Odisee Ghent, and this is our project for the Web
+                Introduction course. We provide sharp and satirical analyses of
+                the latest news and trending topics to make complex subjects
+                accessible and entertaining.
+              </p>
+              <p>
+                Our goal is to demonstrate our knowledge, skills, and creativity
+                in web development through this platform.
+              </p>
+            </div>
+            <div class="about-map">
+              <h3>Our Location</h3>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.6130373949486!2d3.7073187772543643!3d51.06023257171507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3710281d9c345%3A0xc50bd6d3515ba4db!2sOdisee%20Technologiecampus%20Gent!5e0!3m2!1snl!2sbe!4v1733998806856!5m2!1snl!2sbe"
+                width="100%"
+                height="300"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                title="Location Odisee Technology Campus Ghent"
+              >
+              </iframe>
+              <p>Find us on Google Maps:</p>
+              <a
+                href="https://maps.app.goo.gl/kZRMMRzDSgEsWeMt6"
+                target="_blank"
+                >View on Google Maps</a
+              >
+            </div>
+          </div>
+          <div class="team-section">
+            <h3>Meet Our Team</h3>
+            <div class="team-grid">
+              <div class="team-member">
+                <div class="team-image">
+                  <a
+                    href="https://discordapp.com/users/754048345689030709"
+                    target="_blank"
+                    ><img src="images/pfp_mehdi.gif" alt="Mehdi"
+                  /></a>
                 </div>
-            </div>
-        </section>
-        <section class="trending" id="trending">
-            <div class="container">
-                <h2>Real News <span style="font-size: 16px;">(not satire)</span></h2>
-                <ul class="trending-list">
-                    <li><a href="#" data-query="Bitcoin">Bitcoin</a></li>
-                    <li><a href="#" data-query="Sport">Sport</a></li>
-                    <li><a href="#" data-query="Economy">Economy</a></li>
-                    <li><a href="#" data-query="Politic">Politic</a></li>
-                </ul>
-            </div>
-            <p>Reload to get satire news again</p>
-        </section>
-        
-        <section class="latest-news" id="latest-news">
-            <div class="container">
-                <h2>Latest News</h2>
-                <div class="news-grid">
+                <h4>Mehdi</h4>
+              </div>
+              <div class="team-member">
+                <div class="team-image">
+                  <a
+                    href="https://discordapp.com/users/633713761966096404"
+                    target="_blank"
+                    ><img src="images/pfp_karl.png" alt="Karlis"
+                  /></a>
                 </div>
+                <h4>Karlis</h4>
+              </div>
             </div>
-        </section>
-        <section class="about" id="about">
-            <div class="container">
-                <h2>About Us</h2>
-                <div class="about-wrapper">
-                    <div class="about-text">
-                        <p>Welcome to ClickHub! We are students from the Electronics-ICT program at Odisee Ghent, and this is our project for the Web Introduction course. We provide sharp and satirical analyses of the latest news and trending topics to make complex subjects accessible and entertaining.</p>
-                        <p>Our goal is to demonstrate our knowledge, skills, and creativity in web development through this platform.</p>
-                    </div>
-                    <div class="about-map">
-                        <h3>Our Location</h3>
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2507.6130373949486!2d3.7073187772543643!3d51.06023257171507!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3710281d9c345%3A0xc50bd6d3515ba4db!2sOdisee%20Technologiecampus%20Gent!5e0!3m2!1snl!2sbe!4v1733998806856!5m2!1snl!2sbe" 
-                            width="100%" 
-                            height="300" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy"
-                            title="Location Odisee Technology Campus Ghent">
-                        </iframe>
-                        <p>Find us on Google Maps:</p>
-                        <a href="https://maps.app.goo.gl/kZRMMRzDSgEsWeMt6" target="_blank">View on Google Maps</a>
-                    </div>
-                </div>
-                <div class="team-section">
-                    <h3>Meet Our Team</h3>
-                    <div class="team-grid">
-                        <div class="team-member">
-                            <div class="team-image">
-                                <a href="https://discordapp.com/users/754048345689030709" target="_blank"><img src="images/pfp_mehdi.gif" alt="Mehdi"></a>
-                            </div>
-                            <h4>Mehdi</h4>
-                        </div>
-                        <div class="team-member">
-                            <div class="team-image">
-                                <a href="https://discordapp.com/users/633713761966096404" target="_blank"><img src="images/pfp_karl.png" alt="Karlis"></a>
-                            </div>
-                            <h4>Karlis</h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="newsletter" id="newsletter">
-            <div class="container">
-                <h2>Newsletter</h2>
-                <p>Sign up for our newsletter and receive the latest news straight to your inbox.</p>
-                <form action="#" method="post">
-                    <input type="email" placeholder="Your email address" required>
-                    <button type="submit">Sign Up</button>
-                </form>
-            </div>
-        </section>
+          </div>
+        </div>
+      </section>
+      <section class="newsletter" id="newsletter">
+        <div class="container">
+          <h2>Newsletter</h2>
+          <p>
+            Sign up for our newsletter and receive the latest news straight to
+            your inbox.
+          </p>
+          <form action="#" method="post">
+            <input type="email" placeholder="Your email address" required />
+            <button type="submit">Sign Up</button>
+          </form>
+        </div>
+      </section>
     </main>
     <footer>
-        <p>&copy; 2024 ClickHub - Mehdi and Karlis</p>
-        <div class="social-media">
-            <a href="https://www.instagram.com/o.mehdi.k/"><i class="fab fa-instagram"></i></a>
-        </div>
+      <p>&copy; 2024 ClickHub - Mehdi and Karlis</p>
+      <div class="social-media">
+        <a href="https://www.instagram.com/o.mehdi.k/"
+          ><i class="fab fa-instagram"></i
+        ></a>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
