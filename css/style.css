@@ -414,13 +414,7 @@ section p {
   background-color: #f4f4f4;
 }
 
-.newsletter form {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
+.newsletter input[type="text"],
 .newsletter input[type="email"] {
   padding: 15px;
   width: 300px;
@@ -432,9 +426,23 @@ section p {
   font-weight: bold;
 }
 
+.newsletter input[type="text"]:focus,
 .newsletter input[type="email"]:focus {
   border-color: var(--secondary-color);
 }
+
+.newsletter form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+input::placeholder {
+  color: var(--muted-color);
+  font-style: italic;
+}
+
 
 .newsletter button {
   padding: 15px 30px;
